@@ -1,31 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client"
-// import { restaurants } from "./Api.js"
-
-
-const Title = () => (
-    <a href="/">
-        <img alt="logo" className="logo" src="https://i.pinimg.com/originals/1c/a8/89/1ca8892d1bed060a09e584b3b2cac04b.png" />
-    </a>
-);
-
-
-const Header = () => {
-    return (
-        <div className="header">
-            <Title />
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
-
 const restaurants = [
     {
         "info": {
@@ -242,6 +214,9 @@ const restaurants = [
             "costForTwo": "₹200 for two",
             "cuisines": [
                 "South Indian",
+                "North Indian",
+                "Chaat",
+                "Chinese",
                 "Beverages"
             ],
             "avgRating": 4.6,
@@ -341,8 +316,12 @@ const restaurants = [
             "areaName": "Indiranagar",
             "costForTwo": "₹150 for two",
             "cuisines": [
+                "Healthy Food",
                 "South Indian",
+                "North Indian",
                 "Biryani",
+                "Chinese",
+                "Beverages"
             ],
             "avgRating": 4.3,
             "feeDetails": {
@@ -459,7 +438,10 @@ const restaurants = [
             "costForTwo": "₹300 for two",
             "cuisines": [
                 "American",
-                "Snacks"
+                "Snacks",
+                "Turkish",
+                "Portuguese",
+                "Continental"
             ],
             "avgRating": 4.3,
             "feeDetails": {
@@ -876,73 +858,4 @@ const restaurants = [
     }
 ]
 
-
-
-
-
-// const burgerKing = [
-//     {
-//     name: "Burger King",
-//     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-//     cusines: ["Burgers", "American"],
-//     ratings: 4.2
-// },
-//     {
-//     name: "Burger King",
-//     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-//     cusines: ["Burgers", "American"],
-//     ratings: 4.2
-// },
-//     {
-//     name: "Burger King",
-//     image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-//     cusines: ["Burgers", "American"],
-//     ratings: 4.2
-// },
-// ]
-
-
-const RestrauntCard = ({ name, cloudinaryImageId, cuisines, avgRating }) => {
-    return (
-        <div className="card">
-            <img alt="Restraunt-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <p className="cuisines">{cuisines.join(" , ")}</p>
-            <h4>{avgRating} star </h4>
-        </div>
-    )
-}
-
-
-const Body = () => {
-    return (
-        // ES6
-        <div className="Restraunt-list">
-            {
-                restaurants.map((restaurant) => {
-                    return <RestrauntCard {...restaurant.info} key={restaurant.info.id} />
-                })
-            }
-        </div>
-    )
-}
-
-
-const Footer = () => {
-    return (
-        <h4>Footer</h4>
-    )
-}
-
-const PageLayout = () => {
-    return (
-        <>
-            <Header />
-            <Body />
-            <Footer />
-        </>
-    )
-}
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<PageLayout />);
+export { restaurants };
