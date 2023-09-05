@@ -1,4 +1,6 @@
-const restaurants = [
+export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
+export const restaurants = [
     {
         "info": {
             "id": "335405",
@@ -214,9 +216,6 @@ const restaurants = [
             "costForTwo": "₹200 for two",
             "cuisines": [
                 "South Indian",
-                "North Indian",
-                "Chaat",
-                "Chinese",
                 "Beverages"
             ],
             "avgRating": 4.6,
@@ -316,12 +315,8 @@ const restaurants = [
             "areaName": "Indiranagar",
             "costForTwo": "₹150 for two",
             "cuisines": [
-                "Healthy Food",
                 "South Indian",
-                "North Indian",
                 "Biryani",
-                "Chinese",
-                "Beverages"
             ],
             "avgRating": 4.3,
             "feeDetails": {
@@ -438,10 +433,7 @@ const restaurants = [
             "costForTwo": "₹300 for two",
             "cuisines": [
                 "American",
-                "Snacks",
-                "Turkish",
-                "Portuguese",
-                "Continental"
+                "Snacks"
             ],
             "avgRating": 4.3,
             "feeDetails": {
@@ -857,5 +849,3 @@ const restaurants = [
         }
     }
 ]
-
-export { restaurants };
