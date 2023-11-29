@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { restaurantsList } from "../Contact"
 import RestaurantCard from "./RestaurantCard"
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 function filter(search, restaurants) {
     const filterData = restaurants.filter((restaurant) => (restaurant?.info?.name?.toLowerCase().includes(search.toLowerCase())));
@@ -30,17 +31,21 @@ const Body = () => {
     function handlerChange(e) {
         setSearch(e.target.value)
     }
-    return (allRestaurants?.length == 0 ? <Shimmer /> : (
+    return (allRestaurants?.length == 0 ? (<Shimmer />) : (
         <>
             <div className="search-container">
-                <input type="text" className="search-input" value={search} onChange={handlerChange} placeholder="Search" />
+                <input id="search" type="text" className="search-input" value={search} onChange={handlerChange} placeholder="Search" />
                 <button className="search-btn" onClick={() => { const data = filter(search, allRestaurants); setFilteredRestaurants(data) }}>Search</button>
             </div>
             <div className="Restraunt-list">
                 {
+
                     filteredRestaurants?.map((restaurant) => {
-                        return <RestaurantCard {...restaurant?.info} key={restaurant?.info?.id} />
+
+                        return <Link to={"restaurant/" + restaurant?.info?.id} key={restaurant?.info?.id}><RestaurantCard {...restaurant?.info} />
+                        </Link>
                     })
+
                 }
             </div>
         </>
