@@ -10,25 +10,25 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import Profile from "./components/Profile";
 import InstaMart from "./components/InstaMart";
 import UserContext from "./utils/UserContext";
-const Cart = lazy(() => import("./components/Cart"));
+import { Provider } from "react-redux";
+import Store from "./utils/Store";
+import Cart from "./components/Cart";
 const AboutUs = lazy(() => import('./components/AboutUs'));
 
 
 const PageLayout = () => {
     const [user, setUser] = useState({
-        user: {
-            name: "Abhilash B N",
-            email: "bnabhilash2001@gmail.com"
-        }
+        name: "Abhilash B N",
+        email: "bnabhilash2001@gmail.com"
     })
     return (
-        <>
-            <UserContext.Provider value={user}>
+        <Provider store={Store}>
+            <UserContext.Provider value={{ user, setUser }}>
                 <Header />
                 <Outlet />
                 <Footer />
             </UserContext.Provider>
-        </>
+        </Provider>
     )
 }
 
@@ -56,7 +56,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/cart",
-                element: <Suspense fallback={<h1>Loading...</h1>}><Cart /></Suspense>
+                element: <Cart />
             },
             {
                 path: "/instaMart",
