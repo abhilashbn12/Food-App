@@ -47,6 +47,7 @@ const Cart = () => {
                 <h1 className="font-bold text-2xl">Cart Summary</h1>
                 <h1 className="font-bold p-2 m-2">Toatal Qty Added: {cart.length} </h1>
                 <h1 className="font-bold p-2 m-2">Toatal Amount: {Math.round(totalPrice)} </h1>
+                <button className='bg-green-300 rounded-md w-44 my-2 mx-12 h-10 mr-1 items-center content-center hover:bg-green-400'>Check Out</button>
             </div>
         </div>
     )

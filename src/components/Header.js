@@ -29,8 +29,7 @@ const Header = () => {
                     <li><Link to='/cart' className=" p-6 ">Cart {cartItems.length} items</Link></li>
                 </ul>
             </div>
-            <span className="p-6 font-bold">{user.email}</span>
-            {(isLoggedIn == true ? <button onClick={() => { setLoggedIN(false) }}>Logout</button> : <button onClick={() => { setLoggedIN(true) }}>Login</button>)}
+
         </div>
     )
 }
