@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FETCH_ALLRESTAURANTS, restaurantsList } from "../Contact"
+import { FETCH_ALLRESTAURANTS } from "../Contact"
 import RestaurantCard from "./RestaurantCard"
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";

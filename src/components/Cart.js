@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const Cart = () => {
     // const [total, seTotal] = useState(0);
     const cart = useSelector((Store) => Store.cart.items);
-    console.log(cart);
+    // console.log(cart);
     const dispatch = useDispatch();
     const handleClear = (cart) => {
         dispatch(emptyCart(cart))
@@ -34,7 +34,7 @@ const Cart = () => {
                 <h1 className='font-bold text-xl'>Your Cart</h1>
 
                 {cart.map((cartItem) => {
-                    console.log(cartItem);
+                    {/* console.log(cartItem); */ }
                     return (
                         <div key={cartItem.id} className='border border-solid flex justify-between items-center'>
                             <RestaurantMenu {...cartItem} key={cartItem.id} />

@@ -14,6 +14,7 @@ const Title = () => (
 
 const Header = () => {
     const [isLoggedIn, setLoggedIN] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user } = useContext(UserContext);
     const cartItems = useSelector((Store) => Store.cart.items);
     // console.log(cartItems);
@@ -31,6 +32,8 @@ const Header = () => {
             </div>
 
         </div>
+
+
     )
 }
 

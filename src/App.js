@@ -7,13 +7,12 @@ import Error from "./components/Error";
 import ContactUs from "./components/ContactUs";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantDetails from "./components/RestaurantDetails";
-import Profile from "./components/Profile";
-import InstaMart from "./components/InstaMart";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import Store from "./utils/Store";
 import Cart from "./components/Cart";
-const AboutUs = lazy(() => import('./components/AboutUs'));
+import AboutUs from "./components/AboutUs";
+const InstaMart = lazy(() => import('./components/InstaMart'));
 
 
 const PageLayout = () => {
@@ -44,11 +43,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <Suspense><AboutUs /></Suspense>,
-                children: [{
-                    path: "profile",
-                    element: <Profile />
-                }]
+                element: <AboutUs />
             },
             {
                 path: "/contact",
